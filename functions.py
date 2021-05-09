@@ -12,18 +12,17 @@ from keys import *
 
 # return true if birthday
 def checkBirthday():
-    data = pd.read_excel(r'birthdays.xlsx')
+    data = pd.read_excel(r'birthday sheet.xlsx')
     df = pd.DataFrame(data)
 
     Name = df['Name'].tolist()
     Email = df['Email'].tolist()
-    Birthdate = df['Birthdate'].tolist()
-    Age = df['Age'].tolist()
+    Birthdate = df['Birthdate (DD-MM-YYYY)'].tolist()
 
     # populating the data to a list for easy referencing later
     all_data = []
-    for name,email,birthdate,age in zip(Name,Email,Birthdate,Age):
-        all_data.append([name,email,birthdate,age])
+    for name,email,birthdate in zip(Name,Email,Birthdate):
+        all_data.append([name,email,birthdate])
         # print(all_data)
     
     # date and time right now
