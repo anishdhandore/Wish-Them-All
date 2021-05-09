@@ -65,5 +65,3 @@ def wish():
             '''.encode('utf-8')
                         
             smtp.sendmail(EMAIL_ADDRESS, birthdays[i][1], msg)
-
-wish()
