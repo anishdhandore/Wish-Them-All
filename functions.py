@@ -10,7 +10,7 @@ import re
 import smtplib
 from keys import *
 
-# return true if birthday
+# check if anyone has their birthday today
 def checkBirthday():
     data = pd.read_excel(r'birthday sheet.xlsx')
     df = pd.DataFrame(data)
@@ -35,7 +35,7 @@ def checkBirthday():
         # formatting the date using the regex library
         pattern = re.compile(r"(\d{4})-(\d{2})-(\d{2})")
         results = re.search(pattern, individualBirthdate)
-        # grouping the date and the month of his birthdate
+        # grouping the date and the month of his/her birthdate
         date = f"{results.group(2)}-{results.group(3)}"
 
         # return names, email's of people who have their birthday today
